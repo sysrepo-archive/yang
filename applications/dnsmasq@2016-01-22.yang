@@ -1,0 +1,84 @@
+module dnsmasq {
+  namespace "urn:ietf:params:xml:ns:yang:dnsmasq";
+  prefix dns;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+
+  description
+    "Experimental dnsmasq tool YANG model.";
+  contact
+    "sysrepo@sysrepo.org";
+
+  revision 2016-01-22 {
+    description
+      "Inital revision";
+  }
+
+  container dnsmasq-cfg {
+    config true;
+
+    leaf username {
+      type string;
+      default "nobody";
+      description "Specify the userid to which dnsmasq will change after startup. Dnsmasq must normally be started as root,
+        but it will drop root privileges after startup by changing id to another user. Normally this user is 'nobody'
+        but that can be over-ridden with this switch.";
+    }
+
+    leaf groupname {
+      type string;
+      default "dip";
+      description "Specify the group which dnsmasq will run as. The defaults to 'dip', if available, to facilitate access to 
+        /etc/ppp/resolv.conf which is not normally world readable.";
+    }
+
+    container dns-server {
+      description "DNS server subsystem configuration.";
+
+      leaf enabled {
+        type boolean;
+        default true;
+        description "Controls whether DNS server is enabled or disabled.";
+      }
+
+      leaf port {
+        type uint32;
+        default 53;
+        description "Port that DNS serevr is bound to.";
+      }
+    }
+
+    container dhcp-server {
+      description "DHCP server subsystem configuration.";
+
+      leaf enabled {
+        type boolean;
+        default true;
+        description "Controls whether DHCP server is enabled or disabled.";
+      }
+
+      list dhcp-pool {
+        key "start-addr end-addr";
+        description "DHCP pool configuration. Addresses will be given out from the range start-addr to end-addr.";
+
+        leaf start-addr {
+          type inet:ipv4-address-no-zone;
+          description "First address of the DHCP pool.";
+        }
+
+        leaf end-addr {
+          type inet:ipv4-address-no-zone;
+          description "Last address of the DHCP pool.";
+        }
+
+        leaf lease-time {
+          type uint32;
+          default 3600;
+          description "Time period for which the assigned IP address will be leased.";
+        }
+      }
+    }
+  }
+}

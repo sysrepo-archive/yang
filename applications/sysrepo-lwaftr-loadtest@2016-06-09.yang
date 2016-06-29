@@ -1,0 +1,45 @@
+module "sysrepo-lwaftr-loadtest" {
+namespace "urn:ietf:params:xml:ns:yang:sysrepo-lwaftr-loadtest" ;
+prefix "ie" ;
+organization "sysrepo" ;
+description "yang model for loadtester in snabb" ;
+contact "support@freenetconf.org" ;
+revision "2016-06-09" {
+    reference "https://github.com/freenetconf/yang-creator" ;
+}
+    container "loadtest" {
+    config "true" ;
+    list "nic" {
+        key "name" ;
+        config "true" ;
+        leaf "name" {
+            type "string" {
+            }
+        }
+        leaf "capture_file" {
+            type "string" {
+            }
+        }
+        leaf "pci_addr" {
+            type "string" {
+            }
+        }
+        leaf "tx_name" {
+            type "string" {
+            }
+        }
+        leaf "rx_name" {
+            type "string" {
+            }
+        }
+        leaf "tx_id" {
+            type "string" {
+            }
+        }
+        leaf "rx_id" {
+            type "string" {
+            }
+        }
+        }
+    }
+}
