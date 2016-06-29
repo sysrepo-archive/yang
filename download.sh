@@ -14,11 +14,11 @@ internal=(
 
 for i in ${applications[@]}; 
 do
-    wget -P applications/ $i
+    wget -nc -P applications/ $i
 done
 
 for i in ${internal[@]};
 do
-    wget -P internal/ $i
+    wget -nc -P internal/ $i
 done
 
