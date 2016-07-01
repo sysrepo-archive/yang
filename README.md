@@ -7,4 +7,4 @@ This repository contains a collection of YANG modules developed for the use with
 ## Submission Procedure:
 
 If you wrote an YANG module for your application that uses sysrepo, please modify [download.sh](download.sh
-) script and open a pull request, or contact us at sysrepo-dev@sysrepo.org to add it here.
+) script and open a pull request, or contact us at sysrepo-devel@sysrepo.org to add it here.
