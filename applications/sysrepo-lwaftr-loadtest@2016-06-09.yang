@@ -1,45 +1,65 @@
 module "sysrepo-lwaftr-loadtest" {
-namespace "urn:ietf:params:xml:ns:yang:sysrepo-lwaftr-loadtest" ;
-prefix "ie" ;
-organization "sysrepo" ;
-description "yang model for loadtester in snabb" ;
-contact "support@freenetconf.org" ;
-revision "2016-06-09" {
-    reference "https://github.com/freenetconf/yang-creator" ;
-}
+
+    namespace "urn:ietf:params:xml:ns:yang:sysrepo-lwaftr-loadtest" ;
+
+    prefix "ie" ;
+
+    organization "sysrepo" ;
+
+    contact "support@freenetconf.org
+    Editor:   Mislav Novakovic
+               <mislav.novakovic@sartura.hr>";
+
+    description "yang model for loadtester in snabb" ;
+
+    revision "2016-06-09" {
+        reference "https://github.com/freenetconf/yang-creator" ;
+    }
+
     container "loadtest" {
-    config "true" ;
-    list "nic" {
-        key "name" ;
-        config "true" ;
-        leaf "name" {
-            type "string" {
+        description
+            "loadtest configuration parameters.";
+        config "false";
+        list "nic" {
+            key "name";
+            description
+                "nic properties";
+            config "false";
+            leaf "name" {
+                type "string";
+                description
+                  "name of the nic interface";
             }
-        }
-        leaf "capture_file" {
-            type "string" {
+            leaf "capture_file" {
+                type "string";
+                description
+                  "name of the nic.";
             }
-        }
-        leaf "pci_addr" {
-            type "string" {
+            leaf "pci_addr" {
+                type "string";
+                description
+                  "pci address of the nic.";
             }
-        }
-        leaf "tx_name" {
-            type "string" {
+            leaf "tx_name" {
+                type "string";
+                description
+                  "tx name";
             }
-        }
-        leaf "rx_name" {
-            type "string" {
+            leaf "rx_name" {
+                type "string";
+                description
+                  "rx name";
             }
-        }
-        leaf "tx_id" {
-            type "string" {
+            leaf "tx_id" {
+                type "string";
+                description
+                  "tx id";
             }
-        }
-        leaf "rx_id" {
-            type "string" {
+            leaf "rx_id" {
+                type "string";
+                description
+                  "rx id";
             }
-        }
         }
     }
 }
