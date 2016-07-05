@@ -17,14 +17,14 @@ module "sysrepo-lwaftr-loadtest" {
     }
 
     container "loadtest" {
+        config "false";
         description
             "loadtest configuration parameters.";
-        config "false";
         list "nic" {
             key "name";
+            config "false";
             description
                 "nic properties";
-            config "false";
             leaf "name" {
                 type "string";
                 description
