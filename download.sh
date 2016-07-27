@@ -8,10 +8,14 @@ applications=(
     "https://raw.githubusercontent.com/sysrepo/sysrepo-plugin-kea/master/ietf-kea-dhcpv6%402016-07-16.yang"
 )
 
-
 # YANG modules used internally in sysrepo datastore
 internal=(
     "https://raw.githubusercontent.com/sysrepo/sysrepo/master/yang/sysrepo-persistent-data.yang"
+    "https://raw.githubusercontent.com/sysrepo/sysrepo/devel/yang/sysrepo-module-dependencies.yang"
+)
+
+# YANG modules of networking vendors using sysrepo on their platforms:
+vendors=(
 )
 
 for i in ${applications[@]}; 
@@ -24,3 +28,7 @@ do
     wget -N -P internal/ $i
 done
 
+for i in ${vendors[@]};
+do
+    wget -N -P vendors/ $i
+done
