@@ -10,6 +10,6 @@ If you wrote a new YANG module for your application that uses sysrepo, please ad
 
 ## Statistics & Compilation Results
 
-All YANG models committed here are periodically compiled and checked for errors (on daily basis). Overall statistics can be displayed on [this site](http://www.claise.be/2016/07/ietf-yang-modules-statistiques/):
-  * [application-related YANG models](http://www.claise.be/SysrepoApplicationYANGPageCompilation.html)
-  * [internal YANG models](http://www.claise.be/SysrepoInternalYANGPageCompilation.html)
+All YANG modules committed here are periodically compiled and checked for errors (on daily basis). Overall statistics can be displayed on [this site](http://www.claise.be/2016/07/ietf-yang-modules-statistiques/):
+  * [application-related YANG modules](http://www.claise.be/SysrepoApplicationYANGPageCompilation.html)
+  * [internal YANG modules](http://www.claise.be/SysrepoInternalYANGPageCompilation.html)
