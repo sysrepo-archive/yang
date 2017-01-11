@@ -3,7 +3,7 @@
 # YANG modules of Unix/Linux applications that use sysrepo as the datastore
 applications=(
     "https://raw.githubusercontent.com/sysrepo/dnsmasq-sysrepo/master/yang/sysrepo-dnsmasq%402016-01-22.yang" 
-    "https://raw.githubusercontent.com/sartura/snabb/sysrepo/src/program/lwaftr/loadtest/sysrepo-lwaftr-loadtest%402016-06-09.yang"
+    "https://raw.githubusercontent.com/Igalia/snabb/lwaftr/src/lib/yang/snabb-softwire-v1.yang"
     "https://raw.githubusercontent.com/sysrepo/sysrepo-plugin-raspberry/master/yang/sysrepo-raspberry-demo.yang"
     "https://raw.githubusercontent.com/sysrepo/sysrepo-plugin-kea/master/ietf-kea-dhcpv6%402016-07-16.yang"
 )
@@ -12,6 +12,7 @@ applications=(
 internal=(
     "https://raw.githubusercontent.com/sysrepo/sysrepo/master/yang/sysrepo-persistent-data.yang"
     "https://raw.githubusercontent.com/sysrepo/sysrepo/devel/yang/sysrepo-module-dependencies.yang"
+    "https://raw.githubusercontent.com/sysrepo/sysrepo/devel/yang/sysrepo-notification-store.yang"
 )
 
 # YANG modules of networking vendors using sysrepo on their platforms:
